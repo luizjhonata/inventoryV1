@@ -18,7 +18,11 @@ public class Product {
 
     private String cod;
 
-    private BigDecimal price;
+    private BigDecimal cost_price;
+
+    private BigDecimal sale_price;
+
+    private BigDecimal weight_price;
 
     private Long weight;
 
@@ -26,6 +30,23 @@ public class Product {
     @ManyToOne /*Significa que vou ter muitos produtos para um tipo de protudo, relação muitos para um*/
     @JoinColumn(name = "type_id") /*Configurando como será o nome da chave estrangeira no meu banco de dados*/
     private Type type;
+
+
+    public BigDecimal getSale_price() {
+        return sale_price;
+    }
+
+    public void setSale_price(BigDecimal sale_price) {
+        this.sale_price = sale_price;
+    }
+
+    public BigDecimal getWeight_price() {
+        return weight_price;
+    }
+
+    public void setWeight_price(BigDecimal weight_price) {
+        this.weight_price = weight_price;
+    }
 
     public String getName() {
         return name;
@@ -51,12 +72,12 @@ public class Product {
         this.cod = cod;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public BigDecimal getCost_price() {
+        return cost_price;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setCost_price(BigDecimal cost_price) {
+        this.cost_price = cost_price;
     }
 
     public Long getWeight() {
